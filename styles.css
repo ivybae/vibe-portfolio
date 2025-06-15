@@ -107,6 +107,7 @@ nav {
 .about-text {
     flex: 1;
     text-align: left;
+    color: var(--text-primary);
 }
 
 .about-text h2 {
@@ -121,9 +122,15 @@ nav {
     font-size: 2.8rem;
     margin-bottom: 20px;
     line-height: 1.2;
+    color: var(--text-primary);
 }
 
 .highlight {
+    color: var(--text-emphasis);
+    font-weight: bold;
+}
+
+.about-text p {
     font-size: 1.1rem;
     color: var(--text-secondary);
     margin-bottom: 30px;
@@ -149,37 +156,43 @@ nav {
 }
 
 .about-image {
-    flex: 1;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .image-placeholder {
-    width: 400px;
-    height: 500px;
-    background-color: var(--bg-image-placeholder);
-    border-radius: 20px;
+    width: 80px;
+    height: 80px;
+    max-width: 100px;
+    max-height: 100px;
+    background: #D2B48C;
+    border-radius: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    overflow: hidden;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
 }
 
-.image-placeholder i {
-    font-size: 10rem;
-    color: var(--text-emphasis);
-    opacity: 0.6;
+.about-main-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
 }
 
 .about-cards {
+    color: var(--text-primary);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-top: 50px;
+    margin-top: 0.5rem;
 }
 
 .card {
+    color: var(--text-primary);
     background-color: var(--bg-card);
     padding: 40px 30px;
     border-radius: 15px;
@@ -231,6 +244,33 @@ nav {
         max-width: 400px;
         height: 400px;
         margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .about-image {
+        width: auto;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    .image-placeholder {
+        width: 80px;
+        height: 80px;
+        max-width: 100px;
+        max-height: 100px;
+    }
+    .about-text {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 }
 
