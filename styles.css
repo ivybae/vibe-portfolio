@@ -1,3 +1,31 @@
+:root {
+    --bg-primary: #FCF7ED;
+    --bg-secondary: #F5EFE4;
+    --bg-tertiary: #EAE0D1;
+    --bg-card: #FDFBF5;
+    --bg-header: #FFFFFF;
+    --bg-image-placeholder: #D2B48C;
+    --bg-overlay: rgba(0, 100, 0, 0.6);
+    --bg-tag: rgba(0, 100, 0, 0.1);
+
+    --text-primary: #2F4F4F;
+    --text-secondary: #5a7d7c;
+    --text-light: #FFFFFF;
+    --text-emphasis: #006400;
+    --text-tag: #006400;
+    --text-button: #FFFFFF;
+    --text-card-header: #2F4F4F;
+
+    --accent-primary: #006400;
+    --accent-secondary: #D2B48C;
+    --accent-hover: #004d00;
+
+    --border-color: #D2B48C;
+    --border-button: #006400;
+    --shadow-color: rgba(47, 79, 79, 0.08);
+    --shadow-strong-color: rgba(47, 79, 79, 0.12);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +35,8 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
 }
 
 .container {
@@ -18,8 +47,8 @@ body {
 
 /* Header & Navigation */
 header {
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: var(--bg-header);
+    box-shadow: 0 2px 5px var(--shadow-color);
     position: fixed;
     width: 100%;
     top: 0;
@@ -36,7 +65,7 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
+    color: var(--text-primary);
 }
 
 .nav-links {
@@ -46,19 +75,19 @@ nav {
 
 .nav-links li a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-primary);
     margin-left: 2rem;
     transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-    color: #007bff;
+    color: var(--text-emphasis);
 }
 
 /* About Section */
 .about-section {
-    background-color: #1a1a2e;
-    color: white;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
     padding: 100px 0;
 }
 
@@ -81,7 +110,7 @@ nav {
 }
 
 .about-text h2 {
-    color: #e94560;
+    color: var(--text-emphasis);
     font-size: 1.2rem;
     margin-bottom: 15px;
     text-transform: uppercase;
@@ -96,7 +125,7 @@ nav {
 
 .highlight {
     font-size: 1.1rem;
-    color: #b8b8b8;
+    color: var(--text-secondary);
     margin-bottom: 30px;
     line-height: 1.8;
 }
@@ -115,7 +144,7 @@ nav {
 }
 
 .feature-item i {
-    color: #e94560;
+    color: var(--text-emphasis);
     font-size: 1.2rem;
 }
 
@@ -129,7 +158,7 @@ nav {
 .image-placeholder {
     width: 400px;
     height: 500px;
-    background-color: #16213e;
+    background-color: var(--bg-image-placeholder);
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -139,8 +168,8 @@ nav {
 
 .image-placeholder i {
     font-size: 10rem;
-    color: #e94560;
-    opacity: 0.3;
+    color: var(--text-emphasis);
+    opacity: 0.6;
 }
 
 .about-cards {
@@ -151,32 +180,33 @@ nav {
 }
 
 .card {
-    background-color: #16213e;
+    background-color: var(--bg-card);
     padding: 40px 30px;
     border-radius: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
+    box-shadow: 0 5px 15px var(--shadow-color);
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 25px var(--shadow-strong-color);
 }
 
 .card i {
     font-size: 2.5rem;
-    color: #e94560;
+    color: var(--text-emphasis);
     margin-bottom: 20px;
 }
 
 .card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: white;
+    color: var(--text-card-header);
 }
 
 .card p {
-    color: #b8b8b8;
+    color: var(--text-secondary);
     line-height: 1.8;
     font-size: 1rem;
 }
@@ -207,8 +237,8 @@ nav {
 /* Skills Section */
 .skills-section {
     padding: 100px 0;
-    background-color: #0f3460;
-    color: white;
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
 }
 
 .skills-grid {
@@ -218,22 +248,23 @@ nav {
 }
 
 .skill-card {
-    background-color: #16213e;
+    background-color: var(--bg-card);
     padding: 40px 30px;
     border-radius: 15px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px var(--shadow-color);
 }
 
 .skill-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 25px var(--shadow-strong-color);
 }
 
 .skill-card i {
     font-size: 3.5rem;
-    color: #e94560;
+    color: var(--text-emphasis);
     margin-bottom: 20px;
     transition: transform 0.3s ease;
 }
@@ -245,11 +276,11 @@ nav {
 .skill-card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: white;
+    color: var(--text-card-header);
 }
 
 .skill-card p {
-    color: #b8b8b8;
+    color: var(--text-secondary);
     line-height: 1.8;
     font-size: 1rem;
 }
@@ -257,8 +288,8 @@ nav {
 /* Projects Section */
 .projects-section {
     padding: 100px 0;
-    background-color: #1a1a2e;
-    color: white;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
 }
 
 .projects-grid {
@@ -269,16 +300,17 @@ nav {
 }
 
 .project-card {
-    background-color: #16213e;
+    background-color: var(--bg-card);
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px var(--shadow-color);
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 30px var(--shadow-strong-color);
 }
 
 .project-image {
@@ -304,7 +336,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: var(--bg-overlay);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -317,7 +349,7 @@ nav {
 }
 
 .project-link {
-    color: white;
+    color: var(--text-light);
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
@@ -328,7 +360,7 @@ nav {
 }
 
 .project-link:hover {
-    color: #e94560;
+    color: var(--accent-secondary);
 }
 
 .project-info {
@@ -338,11 +370,11 @@ nav {
 .project-info h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: white;
+    color: var(--text-card-header);
 }
 
 .project-info p {
-    color: #b8b8b8;
+    color: var(--text-secondary);
     margin-bottom: 15px;
     line-height: 1.6;
 }
@@ -355,8 +387,8 @@ nav {
 }
 
 .project-tags span {
-    background: rgba(255, 255, 255, 0.1);
-    color: #e94560;
+    background: var(--bg-tag);
+    color: var(--text-tag);
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -370,19 +402,20 @@ nav {
 
 .btn {
     display: inline-block;
-    background: #e94560;
-    color: white;
+    background: var(--accent-primary);
+    color: var(--text-button);
     padding: 15px 40px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
-    border: 2px solid #e94560;
+    border: 2px solid var(--border-button);
 }
 
 .btn:hover {
-    background: transparent;
-    color: #e94560;
+    background: var(--accent-hover);
+    color: var(--text-button);
+    border-color: var(--accent-hover);
 }
 
 /* 반응형 디자인 */
@@ -404,7 +437,7 @@ nav {
 /* Experience Section - Timeline */
 .experience-section {
     padding: 80px 0;
-    background-color: #f9f9f9; /* 섹션 배경색 */
+    background-color: var(--bg-secondary); /* 섹션 배경색 */
 }
 
 .timeline {
@@ -418,7 +451,7 @@ nav {
     content: '';
     position: absolute;
     width: 6px;
-    background-color: #007bff; /* 타임라인 중앙선 색상 */
+    background-color: var(--accent-secondary); /* 타임라인 중앙선 색상 */
     top: 0;
     bottom: 0;
     left: 31px; /* 왼쪽으로 이동 */
@@ -441,8 +474,8 @@ nav {
     width: 50px;
     height: 50px;
     left: 15px; /* 왼쪽으로 고정 */
-    background-color: #fff; /* 아이콘 배경색 */
-    border: 4px solid #007bff; /* 아이콘 테두리 색상 */
+    background-color: var(--bg-card); /* 아이콘 배경색 */
+    border: 4px solid var(--text-emphasis); /* 아이콘 테두리 색상 */
     top: 15px;
     border-radius: 50%;
     z-index: 1;
@@ -453,16 +486,16 @@ nav {
 
 .timeline-icon i {
     font-size: 20px;
-    color: #007bff; /* 아이콘 색상 */
+    color: var(--text-emphasis); /* 아이콘 색상 */
 }
 
 /* 타임라인 내용 */
 .timeline-content {
     padding: 20px 30px;
-    background-color: #fff; /* 내용 배경색 */
+    background-color: var(--bg-card); /* 내용 배경색 */
     position: relative;
     border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* 내용 그림자 */
+    box-shadow: 0 3px 10px var(--shadow-color); /* 내용 그림자 */
 }
 
 .timeline-content h3 {
